@@ -1,0 +1,3 @@
+protocol CodingChallenge {
+    func runTests()
+}
