@@ -1,0 +1,8 @@
+# Xcode and macOS
+.DS_Store
+xcuserdata/
+*.xcworkspace
+*.xcodeproj
+*.plist
+build/
+DerivedData/
