@@ -4,6 +4,7 @@ import Testing
 struct AllTest {
     let binaryGapChallenge = BinaryGapChallenge()
     let stringReversalChallenge = StringReversalChallenge()
+    let cyclicRotationChallenge = CyclicRotationChallenge()
 
     @Test func test_binaryGapChallenge() async throws {
         #expect(binaryGapChallenge.solution(529) == 4)
@@ -20,4 +21,19 @@ struct AllTest {
         #expect(stringReversalChallenge.solution("swift") == "tfiws")
         #expect(stringReversalChallenge.solution("abc") == "cba")
     }
+    
+    @Test func test_cyclicRotationChallenge() async throws {
+        var input = [3, 8, 9, 7, 6]
+        #expect(cyclicRotationChallenge.solution(&input, 1) == [6, 3, 8, 9, 7])
+        #expect(cyclicRotationChallenge.solution(&input, 2) == [7, 6, 3, 8, 9])
+    }
+    
+    @Test func test_ToolBox() async throws {
+        #expect(uniqueElements(from: [1,1,2]).count == 2)
+        #expect(uniqueElementsInOriginalOrder(from: [3,1,1,2,3,1,1,2]) == [3,1,2])
+
+        #expect(cyclicRotation([3, 8, 9, 7, 6], 1) == [6, 3, 8, 9, 7])
+        #expect(cyclicRotation(["A", "B", "C"], 2) == ["B","C","A"])
+    }
+    
 }
